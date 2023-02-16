@@ -9,7 +9,7 @@ const {Navigator, Screen} = createStackNavigator<propsNavigationStack>()
 
 export default function StackF(){
     return(
-        <Navigator initialRouteName="TelaA" screenOptions={{headerShown: true}}>
+        <Navigator initialRouteName="TelaA" screenOptions={{headerShown: false}}>
             <Screen name="TelaA" component={TelaA} options={{title: "Informações Iniciais", headerTintColor: "#fff", headerStyle: {backgroundColor: '#345cab',},}}/>
             <Screen name="TelaB" component={TelaB}/>
             <Screen name="TelaC" component={TelaC}/>

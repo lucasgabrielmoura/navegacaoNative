@@ -1,13 +1,20 @@
+import { useNavigation, StackActions } from "@react-navigation/native";
 import React from "react";
-import { View } from "react-native";
+import { Button, View } from "react-native";
 import TextoCentral from "../components/TextoCentral";
+import { propsStack } from "../navegacao/NavType";
 
 export default function TelaC(){
-    console.warn("Olá Mundo teste")
+    const navigation = useNavigation<propsStack>();
+
     return(
-        <TextoCentral corFundo="#9932cd">
-            Tela C
-        </TextoCentral>
+        <>
+            <TextoCentral corFundo="#9932cd">
+                Tela C
+            </TextoCentral>
+            <Button title="VOLTAR" onPress={()=> navigation.goBack()}/>
+            <Button title="Tela C" onPress={()=> navigation.dispatch(StackActions.push("TelaC"))}/>
+        </>      
     )
 }
 
